@@ -11,17 +11,17 @@ public class Book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column
+    @Column (name = "book_id")
     private int bookId;
 
-    @Column
+    @Column (name = "book_title")
     private String title;
 
-    @Column
+    @Column (nullable = false)
     private boolean isStocked;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
-    @JoinColumn(name = "author_id")
+    @JoinColumn(name = "author_id_fk")
     public Author authorFk;
 
 
