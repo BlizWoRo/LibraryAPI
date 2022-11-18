@@ -1,0 +1,7 @@
+<h1>{{test}}</h1>
+<h1>{{test2}}</h1>
+<ul>
+    <li *ngFor="let book of books$ | async; index as i">
+        {{ i + 1 }}. {{ book.title }} 
+      </li>
+    </ul>

@@ -1,0 +1,6 @@
+<!-- <p *ngFor="let book of books$ | async; index as i">{{book.authorFk?.authorName}}</p> -->
+<ul>
+    <li *ngFor="let author of authors$ | async; index as i">
+        {{ i + 1 }}. {{author.authorName}}
+      </li>
+    </ul>
