@@ -12,7 +12,8 @@
 import { Author } from './author';
 
 
-export interface Book { 
+export interface Book {
+    sort(arg0: (a: Book, b: Book) => number); 
     bookId?: number;
     title?: string;
     isStocked?: boolean;

@@ -1,7 +1,19 @@
 <h1>{{test}}</h1>
 <h1>{{test2}}</h1>
-<ul>
-    <li *ngFor="let book of books$ | async; index as i">
-        {{ i + 1 }}. {{ book.title }} 
-      </li>
-    </ul>
+
+    <h2 *ngFor="let book of books$ | async ">
+        {{book.bookId}}. {{ book.title }} 
+    </h2>
+   
+    <h1>Book Information: </h1>
+
+    <h3>
+    <input [(ngModel)]="id" name="id" type="number" min="1" max="807" step="1" class="form-control" placeholder="Book ID">
+        <button (click)="getBookById()" class="btn btn-secondary btn-lg">Book</button>
+  <!-- <h1>{{book.name|async}}</h1> -->
+      </h3>
+  <ng-container *ngIf="book$ | async as book">
+    {{book.title}} {{book.bookId}} {{book.authorFk?.authorName}} {{book.isStocked ? "Stocked":"Unstocked"}}
+        <!-- <some-component [inputValue]="resolved.value"></some-component>
+            <other-component [data]="resolved.dataset"></other-component> -->
+          </ng-container>

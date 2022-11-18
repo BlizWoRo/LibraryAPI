@@ -16,7 +16,7 @@ import { HttpClient, HttpHeaders, HttpParams,
          HttpResponse, HttpEvent, HttpParameterCodec, HttpContext 
         }       from '@angular/common/http';
 import { CustomHttpParameterCodec }                          from '../encoder';
-import { Observable }                                        from 'rxjs';
+import { Observable, OperatorFunction }                                        from 'rxjs';
 
 // @ts-ignore
 import { Book } from '../model/book';
@@ -31,6 +31,9 @@ import { Configuration }                                     from '../configurat
   providedIn: 'root'
 })
 export class BookControllerService {
+    pipe(arg0: OperatorFunction<unknown, void>): Observable<Book[]> | undefined {
+      throw new Error('Method not implemented.');
+    }
 
     protected basePath = 'http://localhost:5555/library';
     public defaultHeaders = new HttpHeaders();
